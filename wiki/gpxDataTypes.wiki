@@ -6,6 +6,24 @@ This page contains a complete description of all data types that supports the GP
 
 == Gpx ==
 
+This is the root element where all information is stored.
+
+|| _Name:_ || *Gpx* ||||||
+|| _Tag:_ || *gpx* ||||||
+||||||||||
+|| *_Attributes:_* ||||||||
+|| *Name* || *Required* || *Type* || *Cardinality* ||
+|| version || true || string || 1 ||
+|| creator || true || string || 1 ||
+||||||||||
+|| *_Content:_* ||||||||
+|| *Name* || *Required* || *Type* || *Cardinality* ||
+|| metadata || false||[gpxDataTypes#Metadata Metadata] || 0…1 ||
+|| wpt||false || [gpxDataTypes#Waypoint Waypoint] || 0…`*` ||
+|| rte||false || [gpxDataTypes#Route Route] || 0…`*` ||
+|| trk||false || [gpxDataTypes#Track Track] || 0…`*` ||
+|| extensions || false || [gpxDataTypes#Extensions Extensions] ||0…1 ||
+
 == Metadata ==
 
 == Waypoint ==
