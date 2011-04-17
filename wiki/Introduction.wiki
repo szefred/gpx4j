@@ -4,7 +4,7 @@
 
 *gpx4* is a free software tool developed in Java for obtaining, managing and maintaining the information contained in the files [gpx_Introduction gpx (GPS eXchange Format].
 
-This tool is divided into two parts: [libGpx4J_Introduction libGpx4J] and [tools_Introduction gpxTools]. [libGpx4J_Introduction libGpx4J] is responsible for reading and writing [gpx_Introduction gpx] files and the definition of the classes that represent the information contained in the files. Instead [tools / Introduction gpxTools] is a set of tools for manipulating the data obtained through [libGpx4J_Introduction libGpx4J].
+This tool is divided into two parts: [libGpx4J_Introduction libGpx4J] and [tools_Introduction gpxTools]. [libGpx4J_Introduction libGpx4J] is responsible for reading and writing [gpx_Introduction gpx] files and the definition of the classes that represent the information contained in the files. Instead [tools_Introduction gpxTools] is a set of tools for manipulating the data obtained through [libGpx4J_Introduction libGpx4J].
 
 == License ==
 
