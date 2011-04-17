@@ -2,9 +2,9 @@
 
 = Introducción =
 
-*Gpx4J* es una herramienta de software libre desarrollada en Java para la obtención, manejo y persistencia de la información contenida en los ficheros [gpx_Introduction gpx (Formato de intercambio GPS].
+*Gpx4J* es una herramienta de software libre desarrollada en Java para la obtención, manejo y persistencia de la información contenida en los ficheros [gpxIntroduction gpx (Formato de intercambio GPS].
 
-Esta herramienta se divide en dos partes: [libGpx4J_Introduction libGpx4J] y [tools_Introduction gpxTools]. [libGpx4J_Introduction libGpx4J] se encarga de la lectura y escritura de los ficheros [gpx_Introduction gpx] y de la definición de las clases que representan la información que se contiene en los ficheros. En cambio [tools/Introduction gpxTools] es un conjunto de herramientas para la manipulación de los datos que se obtienen a través de [libGpx4J_Introduction libGpx4J].
+Esta herramienta se divide en dos partes: [libIntroduction libGpx4J] y [toolsIntroduction gpxTools]. [libIntroduction libGpx4J] se encarga de la lectura y escritura de los ficheros [gpxIntroduction gpx] y de la definición de las clases que representan la información que se contiene en los ficheros. En cambio [tools/Introduction gpxTools] es un conjunto de herramientas para la manipulación de los datos que se obtienen a través de [libIntroduction libGpx4J].
 
 == Licencia ==
 
