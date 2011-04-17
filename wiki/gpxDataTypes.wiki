@@ -119,7 +119,20 @@ Represents a track - an ordered list of points describing a path.
 
 == Extensions ==
 
-== TrackSegment ==
+This section can add extended GPX data by adding elements from another schema here.
+
+== !TrackSegment ==
+
+A Track Segment holds a list of Track Points which are logically connected in order. To represent a single GPS track where GPS reception was lost, or the GPS receiver was turned off, start a new Track Segment for each continuous span of track data.
+
+|| _Name:_ || *!TrackSegment* ||||||
+||||||||||
+|| *_Attributes:_* || None ||||||
+||||||||||
+|| *_Content:_* ||||||||
+|| *Name* || *Required* || *Type* || *Cardinality* ||
+|| trkpt || false || [gpxDataTypes#Waypoint Waypoint] || 0...1 ||
+|| extensions || false || [gpxDataTypes#Extensions Extensions] || 0...1 ||
 
 == Copyright ==
 
@@ -131,6 +144,6 @@ Represents a track - an ordered list of points describing a path.
 
 == Point ==
 
-== PointSequence ==
+== !PointSequence ==
 
 == Bounds ==
