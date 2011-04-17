@@ -6,7 +6,7 @@
 
 *Currently the format is in version 1.1, which is the version that supports the tool gpx4j*
 
-It can be used to describe [gpx_DataTypes#Waypoint waypoints], [gpx_DataTypes#Track tracks], and [gpx_DataTypes#Route routes]. The format is open and can be used without the need to pay license fees. Its tags store location, elevation, and time and can in this way be used to interchange data between GPS devices and software packages. Such computer programs allow users, for example, to view their tracks, project their tracks on satellite images, annotate maps, and tag photographs with the [http://en.wikipedia.org/wiki/Geolocation geolocation] in the Exif metadata.
+It can be used to describe [gpxDataTypes#Waypoint waypoints], [gpx_DataTypes#Track tracks], and [gpx_DataTypes#Route routes]. The format is open and can be used without the need to pay license fees. Its tags store location, elevation, and time and can in this way be used to interchange data between GPS devices and software packages. Such computer programs allow users, for example, to view their tracks, project their tracks on satellite images, annotate maps, and tag photographs with the [http://en.wikipedia.org/wiki/Geolocation geolocation] in the Exif metadata.
 
 == Data types ==
 
