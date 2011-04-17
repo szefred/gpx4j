@@ -16,7 +16,7 @@ This page contains a complete description of all data types that supports the GP
 
 == Extensions ==
 
-== TrackSegment ==
+== !TrackSegment ==
 
 == Copyright ==
 
@@ -28,6 +28,6 @@ This page contains a complete description of all data types that supports the GP
 
 == Point ==
 
-== PointSequence ==
+== !PointSequence ==
 
 == Bounds ==
