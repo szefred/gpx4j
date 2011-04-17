@@ -16,5 +16,5 @@ The virtual machine needed to run *gpx4j* is Java 6 (is developed under Java 6 u
 
 The tool uses the following libraries:
    * [http://logging.apache.org/log4j/1.2/ log4j 1.2.16] (required): Used to create the logs.
-   * [1.1.1 JDOM http://www.jdom.org/] (optional): Required if you use the classes in this package `org.casaca.gpx4j.core.driver.jdom`.
+   * [http://www.jdom.org/ jdom 1.1.1] (optional): Required if you use the classes in this package `org.casaca.gpx4j.core.driver.jdom`.
    * [http://jaxb.java.net/ JAXB 2.2.3 update 2] (optional): Required if you use the classes in this package `org.casaca.gpx4j.core.driver.jaxb`.
