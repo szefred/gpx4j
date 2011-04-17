@@ -6,17 +6,17 @@
 
 *Currently the format is in version 1.1, which is the version that supports the tool gpx4j*
 
-It can be used to describe [gpx_Waypoint waypoints], [gpx_Track tracks], and [gpx_Route routes]. The format is open and can be used without the need to pay license fees. Its tags store location, elevation, and time and can in this way be used to interchange data between GPS devices and software packages. Such computer programs allow users, for example, to view their tracks, project their tracks on satellite images, annotate maps, and tag photographs with the [http://en.wikipedia.org/wiki/Geolocation geolocation] in the Exif metadata.
+It can be used to describe [gpx_DataTypes#Waypoint waypoints], [gpx_DataTypes#Track tracks], and [gpx_DataTypes#Route routes]. The format is open and can be used without the need to pay license fees. Its tags store location, elevation, and time and can in this way be used to interchange data between GPS devices and software packages. Such computer programs allow users, for example, to view their tracks, project their tracks on satellite images, annotate maps, and tag photographs with the [http://en.wikipedia.org/wiki/Geolocation geolocation] in the Exif metadata.
 
 == Data types ==
 
-In GPX, a collection of points, with no sequential relationship (the county towns of England, say, or all Skyscrapers in New York), is deemed a collection of individual [gpx_Waypoint waypoints]. An ordered collection of points may be expressed as a [gpx_Track track] or a [gpx_Route route]. Conceptually, [gpx_Track tracks] are a record of where a person has been, [gpx_Route routes] are suggestions about where they might go in the future. For example, each point in a [gpx_Track track] may have a timestamp (because someone is recording where and when they were there), but the points in a [gpx_Route route] are unlikely to have timestamps, because the author is suggesting a route which nobody might ever have traveled.
+In GPX, a collection of points, with no sequential relationship (the county towns of England, say, or all Skyscrapers in New York), is deemed a collection of individual [gpx_DataTypes#Waypoint waypoints]. An ordered collection of points may be expressed as a [gpx_DataTypes#Track track] or a [gpx_DataTypes#Route route]. Conceptually, [gpx_DataTypes#Track tracks] are a record of where a person has been, [gpx_DataTypes#Route routes] are suggestions about where they might go in the future. For example, each point in a [gpx_DataTypes#Track track] may have a timestamp (because someone is recording where and when they were there), but the points in a [gpx_DataTypes#Route route] are unlikely to have timestamps, because the author is suggesting a route which nobody might ever have traveled.
 
 In this [gpx_DataTypes page] there is a complete description of all data types supported in *GPX* format
 
 == Sample GPX document ==
 
-The following is a truncated (for brevity) GPX file produced by this library. This document does not show all functionality which can be stored in the GPX format - for example, there are no waypoints or extensions, and this is part of a track, not a route - but the purpose is to serve as a brief illustration.
+The following is a truncated (for brevity) GPX file produced by this library. This document does not show all functionality which can be stored in the GPX format - for example, there are no [gpx_DataTypes#Waypoint waypoints] or [gpx_DataTypes#Extensions extensions], and this is part of a track, not a route - but the purpose is to serve as a brief illustration.
 
 {{{
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
