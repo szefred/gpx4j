@@ -74,7 +74,7 @@ Waypoint represents a point of interest, or named feature on a map.
 || vdop || false || decimal || 0...1 ||
 || pdop || false || decimal || 0...1 ||
 || ageofdgpsdata || false || decimal || 0...1 ||
-|| dgpsid || false || integer (0 <= value <= 1023) || false ||
+|| dgpsid || false || integer (0 <= value <= 1023) || 0...1 ||
 || extensions || false || [gpxDataTypes#Extensions Extensions] || 0...1 || 
 
 == Route ==
@@ -115,7 +115,7 @@ Represents a track - an ordered list of points describing a path.
 || number || false || integer (value >= 0) || 0...1 ||
 || type || false || string || 0...1 ||
 || extensions || false || [gpxDataTypes#Extensions Extensions] || 0...1 ||
-|| trkseg || false|| [gpxDataTypes#TrackSegment TrackSegment] || 0...1 || 
+|| trkseg || false|| [gpxDataTypes#TrackSegment TrackSegment] || 0...`*` || 
 
 == Extensions ==
 
@@ -131,14 +131,51 @@ A Track Segment holds a list of Track Points which are logically connected in or
 ||||||||||
 || *_Content:_* ||||||||
 || *Name* || *Required* || *Type* || *Cardinality* ||
-|| trkpt || false || [gpxDataTypes#Waypoint Waypoint] || 0...1 ||
+|| trkpt || false || [gpxDataTypes#Waypoint Waypoint] || 0...`*` ||
 || extensions || false || [gpxDataTypes#Extensions Extensions] || 0...1 ||
 
 == Copyright ==
 
+Information about the copyright holder and any license governing use of this file. By linking to an appropriate license, you may place your data into the public domain or grant additional usage rights.
+
+|| _Name:_ || *Copyright* ||||||
+||||||||||
+|| *_Attributes:_* ||||||||
+|| *Name* || *Required* || *Type* || *Cardinality* ||
+|| author || true || string || 1 ||
+||||||||||
+|| *_Content:_* ||||||||
+|| *Name* || *Required* || *Type* || *Cardinality* ||
+|| year || false || integer || 0...1 ||
+|| license || false || url || 0...1 ||
+
 == Link ==
 
+A link to an external resource (Web page, digital photo, video clip, etc) with additional information.
+
+|| _Name:_ || *Link* ||||||
+||||||||||
+|| *_Attributes:_* ||||||||
+|| *Name* || *Required* || *Type* || *Cardinality* ||
+|| href || true || url || 1 ||
+||||||||||
+|| *_Content:_* ||||||||
+|| *Name* || *Required* || *Type* || *Cardinality* ||
+|| text || false || string || 0...1 ||
+|| type || false || string || 0...1 ||
+
 == Email ==
+
+An email address. Broken into two parts (id and domain) to help prevent email harvesting.
+
+|| _Name:_ || *Link* ||||||
+||||||||||
+|| *_Attributes:_* ||||||||
+|| *Name* || *Required* || *Type* || *Cardinality* ||
+|| id || true || string || 1 ||
+|| domain || true || string || 1 ||
+||||||||||
+|| *_Content:_* || None ||||||
 
 == Person ==
 
