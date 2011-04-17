@@ -1,0 +1,20 @@
+#summary Introducción a gpx4j
+
+= Introducción =
+
+*Gpx4J* es una herramienta de software libre desarrollada en Java para la obtención, manejo y persistencia de la información contenida en los ficheros [gpx_Introduction gpx (Formato de intercambio GPS].
+
+Esta herramienta se divide en dos partes: [libGpx4J_Introduction libGpx4J] y [tools_Introduction gpxTools]. [libGpx4J_Introduction libGpx4J] se encarga de la lectura y escritura de los ficheros [gpx_Introduction gpx] y de la definición de las clases que representan la información que se contiene en los ficheros. En cambio [tools/Introduction gpxTools] es un conjunto de herramientas para la manipulación de los datos que se obtienen a través de [libGpx4J_Introduction libGpx4J].
+
+== Licencia ==
+
+*Gpx4J* usa la licencia [http://www.apache.org/licenses/LICENSE-2.0 Apache License 2.0] tanto para el código fuente como para la documentación.
+
+== Requisitos ==
+
+La máquina virtual que necesita *Gpx4J* para funcionar es Java 6 (se ha desarrollado bajo Java 6 update 24).
+
+La herramienta utiliza las siguientes librerías:
+  * [http://logging.apache.org/log4j/1.2/ log4j 1.2.16] (requerida): Se usa para la creación de los logs.
+  * [http://www.jdom.org/ jdom 1.1.1] (opcional): Se necesita si se utilizan las clases de este paquete `org.casaca.gpx4j.core.driver.jdom`
+  * [http://jaxb.java.net/ jaxb 2.2.3 update 2] (opcional): Se necesita si se utilizan las clases de este paquete `org.casaca.gpx4j.core.driver.jaxb`
