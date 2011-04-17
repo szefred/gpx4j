@@ -1,4 +1,4 @@
-# summary Introduction to gpx4j
+#summary Introduction to gpx4j
 
 = Introduction =
 
