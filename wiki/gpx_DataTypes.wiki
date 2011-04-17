@@ -3,3 +3,31 @@
 = GPX data types =
 
 This page contains a complete description of all data types that supports the GPX format in version 1.1.
+
+== Gpx ==
+
+== Metadata ==
+
+== Waypoint ==
+
+== Route ==
+
+== Track ==
+
+== Extensions ==
+
+== TrackSegment ==
+
+== Copyright ==
+
+== Link ==
+
+== Email ==
+
+== Person ==
+
+== Point ==
+
+== PointSequence ==
+
+== Bounds ==
