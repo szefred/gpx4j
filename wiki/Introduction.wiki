@@ -1,6 +1,7 @@
 #summary Introduction to gpx4j
+#labels Featured
 
-= Introduction =
+= gpx4j =
 
 *gpx4* is a free software tool developed in Java for obtaining, managing and maintaining the information contained in the files [gpxIntroduction gpx (GPS eXchange Format].
 
