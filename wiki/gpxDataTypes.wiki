@@ -52,8 +52,8 @@ Waypoint represents a point of interest, or named feature on a map.
 ||||||||||
 || *_Attributes:_* ||||||||
 || *Name* || *Required* || *Type* || *Cardinality* ||
-|| latitude || true || decimal (-90 <= value <= 90) || 1 ||
-|| longitude || true || decimal (-90 <= value <= 90) || 1 ||
+|| lat || true || decimal (-90 <= value <= 90) || 1 ||
+|| lon || true || decimal (-90 <= value <= 90) || 1 ||
 ||||||||||
 || *_Content:_* ||||||||
 || *Name* || *Required* || *Type* || *Cardinality* ||
@@ -168,7 +168,7 @@ A link to an external resource (Web page, digital photo, video clip, etc) with a
 
 An email address. Broken into two parts (id and domain) to help prevent email harvesting.
 
-|| _Name:_ || *Link* ||||||
+|| _Name:_ || *Email* ||||||
 ||||||||||
 || *_Attributes:_* ||||||||
 || *Name* || *Required* || *Type* || *Cardinality* ||
@@ -181,7 +181,7 @@ An email address. Broken into two parts (id and domain) to help prevent email ha
 
 A person or organization.
 
-|| _Name:_ || *Link* ||||||
+|| _Name:_ || *Person* ||||||
 ||||||||||
 || *_Attributes:_* || None ||||||
 ||||||||||
@@ -193,6 +193,43 @@ A person or organization.
 
 == Point ==
 
+A geographic point with optional elevation and time. Available for use by other schemas.
+
+|| _Name:_ || *Point* ||||||
+||||||||||
+|| *_Attributes:_* ||||||||
+|| *Name* || *Required* || *Type* || *Cardinality* ||
+|| lat || true || decimal (-90 <= value <= 90) || 1 ||
+|| lon || true || decimal (-90 <= value <= 90) || 1 ||
+||||||||||
+|| *_Content:_* ||||||||
+|| *Name* || *Required* || *Type* || *Cardinality* ||
+|| ele || false || decimal || 0...1 ||
+|| time || false || datetime || 0...1 ||
+
 == !PointSequence ==
 
+An ordered sequence of points. (for polygons or polylines, e.g.)
+
+|| _Name:_ || *!PointSequence* ||||||
+||||||||||
+|| *_Attributes:_* || None ||||||
+||||||||||
+|| *_Content:_* ||||||||
+|| *Name* || *Required* || *Type* || *Cardinality* ||
+|| pt || false || [gpxDataTypes#Point Point] || 0...`*` ||
+
 == Bounds ==
+
+Two lat/lon pairs defining the extent of an element.
+
+|| _Name:_ || *Bounds* ||||||
+||||||||||
+|| *_Attributes:_* ||||||||
+|| *Name* || *Required* || *Type* || *Cardinality* ||
+|| minlat || true || decimal (-90 <= value <= 90) || 1 ||
+|| minlon || true || decimal (-90 <= value <= 90) || 1 ||
+|| maxlat || true || decimal (-90 <= value <= 90) || 1 ||
+|| maxlon || true || decimal (-90 <= value <= 90) || 1 ||
+||||||||||
+|| *_Content:_* || None ||||||
