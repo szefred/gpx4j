@@ -1,0 +1,239 @@
+#summary Definición de los tipos de datos soportados por el formato GPX
+
+= Tipos de datos en el formato GPX =
+
+Esta página contiene una completa descripción de todos los tipos de datos soportados por el formatio GPX en la versión 1.1
+
+== Gpx ==
+
+Este es el elemento raíz del documento donde se almacena toda la información.
+
+|| _Nombre:_ || *Gpx* ||||||
+|| _Etiqueta:_ || *gpx* ||||||
+||||||||||
+|| *_Atributos:_* ||||||||
+|| *Nombre* || *Obligatorio* || *Tipo* || *Cardinalidad* ||
+|| version || Sí || string || 1 ||
+|| creator || Sí || string || 1 ||
+||||||||||
+|| *_Contenido:_* ||||||||
+|| *Nombre* || *Obligatorio* || *Tipo* || *Cardinalidad* ||
+|| metadata || No||[gpxDataTypes#Metadata Metadata] || 0…1 ||
+|| wpt||No || [gpxDataTypes#Waypoint Waypoint] || 0…`*` ||
+|| rte||No || [gpxDataTypes#Route Route] || 0…`*` ||
+|| trk||No || [gpxDataTypes#Track Track] || 0…`*` ||
+|| extensions || No || [gpxDataTypes#Extensions Extensions] ||0…1 ||
+
+== Metadata ==
+
+Información sobre el archivo GPX, el autor y las restricciones de derechos de autor van en la sección de metadatos. Proporcionan información rica y significativa acerca de los archivos GPX permiten a otros buscar y utilizar los datos GPS.
+
+|| _Nombre:_ || *Metadata* ||||||
+||||||||||
+|| *_Atributos:_* || Ninguno ||||||
+||||||||||
+|| *_Contenido:_* ||||||||
+|| *Nombre* || *Obligatorio* || *Tipo* || *Cardinalidad* ||
+|| name || No || string || 0...1 ||
+|| desc || No || string || 0...1 ||
+|| author || No || [gpxDataTypes#Person Person] || 0...1 ||
+|| copyright || No || [gpxDataTypes#Copyright Copyright] || 0...1 ||
+|| link || No || [gpxDataTypes#Link Link] || 0...1 ||
+|| time || No || datetime || 0...1 ||
+|| keywords || No || string || 0...1 ||
+|| bounds || No || [gpxDataTypes#Bounds Bounds] || 0...1 ||
+|| extensions || No || [gpxDataTypes#Extensions Extensions] || 0...1 ||
+
+== Waypoint ==
+
+Waypoint represents a point of interest, or named feature on a map.
+
+Un _waypoint_ representa un punto de interés o nombra una característica de un mapa.
+
+|| _Nombre:_ || *Waypoint* ||||||
+||||||||||
+|| *_Atributos:_* ||||||||
+|| *Nombre* || *Obligatorio* || *Tipo* || *Cardinalidad* ||
+|| lat || Sí || decimal (-90 <= valor <= 90) || 1 ||
+|| lon || Sí || decimal (-90 <= valor <= 90) || 1 ||
+||||||||||
+|| *_Contenido:_* ||||||||
+|| *Nombre* || *Obligatorio* || *Tipo* || *Cardinalidad* ||
+|| ele || No || decimal || 0...1 ||
+|| time || No || datetime || 0...1 ||
+|| magvar || No || decimal (0 <= valor <=360) || 0...1 ||
+|| geoidheight || No || decimal || 0...1 ||
+|| name || No || string || 0...1 ||
+|| cmt || No || string || 0...1 ||
+|| desc || No || string || 0...1 ||
+|| src || No || string || 0...1 ||
+|| link || No || [gpxDataTypes#Link Link] || 0...1 ||
+|| sym || No || string || 0...1 ||
+|| type || No || string || 0...1 ||
+|| fix || No || enum: 'Ninguno' '2d' '3d' 'dgps' 'pps' || 0...1 ||
+|| sat || No || integer (valor >= 0) || 0...1 ||
+|| hdop || No || decimal || 0...1 ||
+|| vdop || No || decimal || 0...1 ||
+|| pdop || No || decimal || 0...1 ||
+|| ageofdgpsdata || No || decimal || 0...1 ||
+|| dgpsid || No || integer (0 <= valor <= 1023) || 0...1 ||
+|| extensions || No || [gpxDataTypes#Extensions Extensions] || 0...1 || 
+
+== Route ==
+
+Representa una ruta, una lista ordenada de _waypoints_ representando una serie de puntos que conducen a un destino.
+
+|| _Nombre:_ || *Route* ||||||
+||||||||||
+|| *_Atributos:_* || Ninguno ||||||
+||||||||||
+|| *_Contenido:_* ||||||||
+|| *Nombre* || *Obligatorio* || *Tipo* || *Cardinalidad* ||
+|| name || No || string || 0...1 ||
+|| cmt || No || string || 0...1 ||
+|| desc || No || string || 0...1 ||
+|| src || No || string || 0...1 ||
+|| link || No || [gpxDataTypes#Link Link] || 0...1 ||
+|| number || No || integer (valor >= 0) || 0...1 ||
+|| type || No || string || 0...1 ||
+|| extensions || No || [gpxDataType#Extensions Extensions] || 0...1 ||
+|| rtept || No || [gpxDataType#Waypoint Waypoint] || 0...`*`|| 
+
+== Track ==
+
+Representa un recorrido, una lista ordenada de puntos que describen un camino.
+
+|| _Nombre:_ || *Track* ||||||
+||||||||||
+|| *_Atributos:_* || Ninguno ||||||
+||||||||||
+|| *_Contenido:_* ||||||||
+|| *Nombre* || *Obligatorio* || *Tipo* || *Cardinalidad* ||
+|| name || No || string || 0...1 ||
+|| cmt || No || string || 0...1 ||
+|| desc || No || string || 0...1 ||
+|| src || No || string || 0...1 ||
+|| link || No || [gpxDataTypes#Link Link] || 0...1 ||
+|| number || No || integer (valor >= 0) || 0...1 ||
+|| type || No || string || 0...1 ||
+|| extensions || No || [gpxDataTypes#Extensions Extensions] || 0...1 ||
+|| trkseg || No|| [gpxDataTypes#TrackSegment TrackSegment] || 0...`*` || 
+
+== Extensions ==
+
+Esta sección puede añadir y extender los datos del fichero GPX añadiendo elementos de otro esquema.
+
+== !TrackSegment ==
+
+Un segmento de recorrido tiene una lista de puntos (_waypoints_) que están conectados en un orden lógico. En el caso en que la señal del receptor se pierda o se apague se ha de empezar un nuevo segmento de recorrigo (_TrackSegment_) para tener puntos del recorrido contínuos.
+
+|| _Nombre:_ || *!TrackSegment* ||||||
+||||||||||
+|| *_Atributos:_* || Ninguno ||||||
+||||||||||
+|| *_Contenido:_* ||||||||
+|| *Nombre* || *Obligatorio* || *Tipo* || *Cardinalidad* ||
+|| trkpt || No || [gpxDataTypes#Waypoint Waypoint] || 0...`*` ||
+|| extensions || No || [gpxDataTypes#Extensions Extensions] || 0...1 ||
+
+== Copyright ==
+
+Information about the copyright holder and any license governing use of this file. By linking to an appropriate license, you may place your data into the public domain or grant additional usage rights.
+
+Información sobre el titular del copyright y cualquier licencia que rija este fichero. Usando una licencia adecuada se pueden publicar los datos para dominio público o garantizar unos derechos de uso.
+
+|| _Nombre:_ || *Copyright* ||||||
+||||||||||
+|| *_Atributos:_* ||||||||
+|| *Nombre* || *Obligatorio* || *Tipo* || *Cardinalidad* ||
+|| author || Sí || string || 1 ||
+||||||||||
+|| *_Contenido:_* ||||||||
+|| *Nombre* || *Obligatorio* || *Tipo* || *Cardinalidad* ||
+|| year || No || integer || 0...1 ||
+|| license || No || url || 0...1 ||
+
+== Link ==
+
+Un enlace a una fuente externa (página web, fotogragías, vídeos, etc) que añadan información.
+
+|| _Nombre:_ || *Link* ||||||
+||||||||||
+|| *_Atributos:_* ||||||||
+|| *Nombre* || *Obligatorio* || *Tipo* || *Cardinalidad* ||
+|| href || Sí || url || 1 ||
+||||||||||
+|| *_Contenido:_* ||||||||
+|| *Nombre* || *Obligatorio* || *Tipo* || *Cardinalidad* ||
+|| text || No || string || 0...1 ||
+|| type || No || string || 0...1 ||
+
+== Email ==
+
+Una dirección de correo electrónico. Se divide en dos partes (id y dominio) para prevenir la recolección de direcciones de correo electrónico.
+
+|| _Nombre:_ || *Email* ||||||
+||||||||||
+|| *_Atributos:_* ||||||||
+|| *Nombre* || *Obligatorio* || *Tipo* || *Cardinalidad* ||
+|| id || Sí || string || 1 ||
+|| domain || Sí || string || 1 ||
+||||||||||
+|| *_Contenido:_* || Ninguno ||||||
+
+== Person ==
+
+Una persona u organización.
+
+|| _Nombre:_ || *Person* ||||||
+||||||||||
+|| *_Atributos:_* || Ninguno ||||||
+||||||||||
+|| *_Contenido:_* ||||||||
+|| *Nombre* || *Obligatorio* || *Tipo* || *Cardinalidad* ||
+|| name || No || string || 0...1 ||
+|| email || No || [gpxDataTypes#Email Email] || 0...1 ||
+|| link || No || [gpxDataTypes#Link Link] || 0...1 ||
+
+== Point ==
+
+Un punto geográfico con información opcional sobre la elevación y la fecha y hora. Disponible para usar en otros esquemas ya que el esquema del fichero GPX no lo utiliza.
+
+|| _Nombre:_ || *Point* ||||||
+||||||||||
+|| *_Atributos:_* ||||||||
+|| *Nombre* || *Obligatorio* || *Tipo* || *Cardinalidad* ||
+|| lat || Sí || decimal (-90 <= valor <= 90) || 1 ||
+|| lon || Sí || decimal (-90 <= valor <= 90) || 1 ||
+||||||||||
+|| *_Contenido:_* ||||||||
+|| *Nombre* || *Obligatorio* || *Tipo* || *Cardinalidad* ||
+|| ele || No || decimal || 0...1 ||
+|| time || No || datetime || 0...1 ||
+
+== !PointSequence ==
+
+Una secuencia ordenada de puntos (para polígonos, polilíneas, etc).
+
+|| _Nombre:_ || *!PointSequence* ||||||
+||||||||||
+|| *_Atributos:_* || Ninguno ||||||
+||||||||||
+|| *_Contenido:_* ||||||||
+|| *Nombre* || *Obligatorio* || *Tipo* || *Cardinalidad* ||
+|| pt || No || [gpxDataTypes#Point Point] || 0...`*` ||
+
+== Bounds ==
+
+Dos parejas de latitud y longitud que definen la extensión de un elemento.
+
+|| _Nombre:_ || *Bounds* ||||||
+||||||||||
+|| *_Atributos:_* ||||||||
+|| *Nombre* || *Obligatorio* || *Tipo* || *Cardinalidad* ||
+|| minlat || Sí || decimal (-90 <= valor <= 90) || 1 ||
+|| minlon || Sí || decimal (-90 <= valor <= 90) || 1 ||
+|| maxlat || Sí || decimal (-90 <= valor <= 90) || 1 ||
+|| maxlon || Sí || decimal (-90 <= valor <= 90) || 1 ||
+||||||||||
+|| *_Contenido:_* || Ninguno ||||||
